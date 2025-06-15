@@ -5,19 +5,37 @@ using namespace std;
 int main() {
     double a, b, c;
     double discriminante;
+    double x1, x2, x, partereal, parteimaginaria;
 
-    cout<<"ingresa el coeficiente a:";
+    cout<<"ingrese el coeficiente a:";
     cin>>a;
 
-    cout<<"ingresa el coeficiente b:";
+    cout<<"ingrese el coeficiente b:";
     cin>>b;
 
-    cout<<"ingresa el coeficiente c:";
+    cout<<"ingrese el coeficiente c:";
     cin>>c;
 
     discriminante = b*b - 4*a*c;
 
-    cout<<"discriminante: "<<discriminante<<endl;
+    if (discriminante > 0) 
+    {
+        x1 = (-b + sqrt(discriminante)) / (2*a);
+        x2 = (-b - sqrt(discriminante)) / (2*a);
+        cout<<"raices reales y distintas: "<<x1<<" , "<<x2<<endl;
+    } 
+    else if (discriminante == 0) 
+    {
+        x = -b / (2*a);
+        cout<<"raices reales e iguales: "<<x<<endl;
+    } 
+    else 
+    {
+        partereal = -b / (2*a);
+        parteimaginaria = sqrt(-discriminante) / (2*a);
+        cout<<"raices complejas: "<<partereal<<" + "<<parteimaginaria<<" i, "
+            <<partereal<<" - "<<parteimaginaria<<" i "<<endl;
+    }
 
     return 0;
 }
