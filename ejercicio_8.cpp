@@ -63,3 +63,28 @@ void jugarTurno(int& monedas)
 
     cout<<"monedas restantes:"<<monedas<<endl<<endl;
 }
+
+int main() {
+    int monedas;
+    char opcion;
+
+    monedas = 100;
+
+    while (monedas > 0) 
+    {
+        jugarTurno(monedas);
+        if (monedas <= 0) 
+        {
+            break;
+        }
+        cout<<"deseas seguir jugando? (s/n):";
+        cin>>opcion;
+        if (opcion != 's' && opcion != 'S') 
+        {
+            break;
+        }
+    }
+
+    cout<<"juego terminado. monedas finales:"<<monedas<<endl;
+    return 0;
+}
